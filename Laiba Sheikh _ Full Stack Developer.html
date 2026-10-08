@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laiba Sheikh | Full Stack Developer</title>
+<meta name="description" content="Portfolio of Laiba Sheikh, full stack developer (React, Node.js, WordPress).">
+<style>
+:root{--bg:#f5f3ff;--card:rgba(255,255,255,.78);--text:#15122b;--muted:#5a5675;--a:#6d28d9;--b:#db2777;--c:#0891b2;--line:rgba(80,60,160,.16);--code:#14102a;--codet:#e9e5ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08070f;--card:rgba(255,255,255,.06);--text:#f4f2ff;--muted:#a8a3c8;--a:#a78bfa;--b:#f472b6;--c:#22d3ee;--line:rgba(255,255,255,.11)}}
+:root[data-theme="dark"]{--bg:#08070f;--card:rgba(255,255,255,.06);--text:#f4f2ff;--muted:#a8a3c8;--a:#a78bfa;--b:#f472b6;--c:#22d3ee;--line:rgba(255,255,255,.11)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65;overflow-x:hidden;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(45vmax 45vmax at 12% -5%,color-mix(in srgb,var(--a) 36%,transparent),transparent 70%),radial-gradient(40vmax 40vmax at 100% 105%,color-mix(in srgb,var(--b) 28%,transparent),transparent 70%),radial-gradient(30vmax 30vmax at 90% 20%,color-mix(in srgb,var(--c) 16%,transparent),transparent 70%)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.4;-webkit-mask-image:radial-gradient(ellipse at 50% 15%,#000,transparent 70%);mask-image:radial-gradient(ellipse at 50% 15%,#000,transparent 70%)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);background:var(--card);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;position:relative}
+.logo{font-weight:800;letter-spacing:-.02em;font-family:ui-monospace,Menlo,Consolas,monospace}
+.logo b{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.links{display:flex;gap:6px;align-items:center;font-size:14.5px}
+.links a.l{padding:8px 14px;border-radius:999px;color:var(--muted);transition:.2s}
+.links a.l:hover{color:var(--text)}
+.links a.l.on{color:#fff;background:linear-gradient(90deg,var(--a),var(--b))}
+button.t,button.m{border:1px solid var(--line);background:var(--card);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:16px;margin-left:6px}
+button.m{display:none}
+@media(max-width:760px){button.m{display:block}.links{display:none;position:absolute;top:62px;left:0;right:0;flex-direction:column;align-items:stretch;padding:12px;background:var(--bg);border:1px solid var(--line);border-radius:0 0 18px 18px}.links.open{display:flex}.links a.l{text-align:center}.tm{display:flex}}
+.tm{display:flex;align-items:center}
+.page{display:none;padding:56px 0 40px}
+.page.show{display:block;animation:in .5s ease both}
+html:not(.js) .page{display:block}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--a);font-weight:700;font-family:ui-monospace,Menlo,Consolas,monospace}
+h1{font-size:clamp(38px,8.5vw,68px);line-height:1.03;letter-spacing:-.035em;margin:18px 0}
+h2{font-size:clamp(28px,5.5vw,44px);letter-spacing:-.025em;margin:6px 0 16px}
+.sub{color:var(--muted);max-width:620px;font-size:18px;margin:0 0 30px}
+.g{background:linear-gradient(90deg,var(--a),var(--b),var(--c),var(--a));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 7s linear infinite}
+@keyframes sh{to{background-position:250% 0}}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+@media(max-width:820px){.hero{grid-template-columns:1fr}}
+.pill{display:inline-flex;gap:8px;align-items:center;padding:6px 14px;border:1px solid var(--line);background:var(--card);border-radius:999px;font-size:13px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.22);animation:pu 2s infinite}
+@keyframes pu{50%{box-shadow:0 0 0 8px rgba(34,197,94,0)}}
+.btn{display:inline-block;padding:13px 24px;border-radius:14px;font-weight:600;font-size:15px;margin:0 10px 10px 0;transition:transform .2s;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:linear-gradient(90deg,var(--a),var(--b));color:#fff;box-shadow:0 10px 30px -10px var(--b)}
+.btn.s{border:1px solid var(--line);background:var(--card);color:var(--text)}
+.term{background:var(--code);color:var(--codet);border-radius:18px;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(109,40,217,.6);overflow:hidden;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px}
+.term .bar{display:flex;gap:7px;padding:12px 14px;background:rgba(255,255,255,.06)}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#f87171}.term .bar i:nth-child(2){background:#fbbf24}.term .bar i:nth-child(3){background:#34d399}
+.term pre{margin:0;padding:18px;white-space:pre-wrap;line-height:1.7}
+.k{color:#c4b5fd}.s2{color:#86efac}.n{color:#f9a8d4}
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:14px 0;margin:40px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq div{display:flex;gap:14px;width:max-content;animation:mv 28s linear infinite}
+@keyframes mv{to{transform:translateX(-50%)}}
+.chip{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:14px;white-space:nowrap}
+.bento{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);border-color:var(--a);box-shadow:0 20px 40px -24px var(--a)}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.ico{font-size:28px;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.tl{border-left:2px solid var(--line);padding-left:22px;margin-left:6px;position:relative}
+.tl:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:linear-gradient(var(--a),var(--b))}
+.tl h3{margin:0}.tl .m{color:var(--muted);font-size:14px;margin:2px 0 8px}
+.tag{font-size:12px;color:var(--c);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.empty{border-style:dashed;min-height:170px;display:flex;flex-direction:column;justify-content:center}
+.cta{text-align:center;padding:48px 24px;border-radius:30px;background:linear-gradient(135deg,rgba(109,40,217,.2),rgba(219,39,119,.16));border:1px solid var(--line);margin-top:48px}
+.cta h2{margin-top:0}
+.sec{margin-top:44px}
+form{display:grid;gap:12px}
+input,textarea{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;font-size:16px}
+input:focus,textarea:focus{outline:2px solid var(--a);border-color:transparent}
+footer{padding:28px 0 46px;text-align:center;color:var(--muted);font-size:14px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.page.show{animation:none}.mq div,.g,.dot{animation:none}.card,.btn{transition:none}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<header class="nav"><div class="wrap">
+<a class="logo" href="#home">&lt;laiba<b>/&gt;</b></a>
+<div class="tm">
+<nav class="links" id="lk"><a class="l" data-p="home" href="#home">Home</a><a class="l" data-p="about" href="#about">About</a><a class="l" data-p="projects" href="#projects">Projects</a><a class="l" data-p="services" href="#services">Services</a><a class="l" data-p="contact" href="#contact">Contact</a></nav>
+<button class="t" id="tg" aria-label="Toggle theme">◐</button><button class="m" id="mn" aria-label="Menu">☰</button>
+</div></div></header>
+
+<main class="wrap">
+
+<section class="page" id="p-home" data-t="Home">
+<div class="hero"><div>
+<span class="pill"><span class="dot"></span>Available for remote work</span>
+<h1>I build <span class="g">fast, beautiful</span> web apps.</h1>
+<p class="sub">Hi, I'm Laiba Sheikh, a full stack developer from Abbottabad, Pakistan. I work with React.js, Node.js, JavaScript and WordPress, and I'm adding Python to my stack.</p>
+<a class="btn p" href="#projects">View projects</a><a class="btn s" href="#contact">Hire me</a>
+</div>
+<div class="term"><div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="k">const</span> laiba = {
+  role: <span class="s2">"Full Stack Developer"</span>,
+  stack: [<span class="s2">"React"</span>, <span class="s2">"Node.js"</span>, <span class="s2">"WordPress"</span>],
+  learning: <span class="s2">"Python"</span>,
+  location: <span class="s2">"Abbottabad, PK"</span>,
+  remote: <span class="n">true</span>
+};</pre></div></div>
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+<div class="bento">
+<a class="card" href="#about"><div class="ico">👩‍💻</div><h3>About me</h3><p>My story, skills and experience →</p></a>
+<a class="card" href="#services"><div class="ico">🛠️</div><h3>Services</h3><p>What I can build for you →</p></a>
+<a class="card" href="#projects"><div class="ico">🚀</div><h3>Projects</h3><p>A look at my work →</p></a>
+</div>
+<div class="cta"><h2>Let's work together.</h2><p class="sub" style="margin:0 auto 20px">Have a project or opportunity in mind?</p><a class="btn p" href="#contact">Get in touch</a></div>
+</section>
+
+<section class="page" id="p-about" data-t="About">
+<div class="eyebrow">// about</div><h2>Clean code, clear design.</h2>
+<p class="sub">I turn ideas into responsive, user-friendly products, from polished front-end interfaces to the back-end logic behind them. I care about readable code, fast pages and layouts that feel great on every screen, and I'm always learning something new.</p>
+<div class="sec"><div class="eyebrow">// toolkit</div><h2>Skills</h2>
+<div class="bento">
+<div class="card"><h3>Front-end</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">React.js</span><span class="chip">Responsive Design</span></div></div>
+<div class="card"><h3>Back-end</h3><div class="chips"><span class="chip">Node.js</span><span class="chip">REST APIs</span></div></div>
+<div class="card"><h3>CMS</h3><div class="chips"><span class="chip">WordPress</span></div></div>
+<div class="card"><h3>Currently learning</h3><div class="chips"><span class="chip">Python</span></div></div>
+</div></div>
+<div class="sec"><div class="eyebrow">// journey</div><h2>Experience</h2>
+<div class="tl"><h3>Full Stack Developer</h3><div class="m">Freelance · Remote · 2026 – Present</div>
+<p style="margin:0;color:var(--muted)">Building fast, responsive and user-friendly websites with React.js, Node.js, JavaScript and WordPress.</p></div></div>
+<div class="cta"><h2>Want to know more?</h2><a class="btn p" href="#contact">Contact me</a></div>
+</section>
+
+<section class="page" id="p-projects" data-t="Projects">
+<div class="eyebrow">// selected work</div><h2>Projects</h2>
+<p class="sub">A selection of websites and web apps I've built.</p>
+<div class="bento" id="pg"></div>
+<div class="cta"><h2>Have a project in mind?</h2><a class="btn p" href="#contact">Let's talk</a></div>
+</section>
+
+<section class="page" id="p-services" data-t="Services">
+<div class="eyebrow">// services</div><h2>What I can build for you</h2>
+<p class="sub">From a single landing page to a full web application.</p>
+<div class="bento">
+<div class="card"><div class="ico">🎨</div><h3>Front-end Development</h3><p>Responsive, fast interfaces with HTML5, CSS3, JavaScript and React.js.</p></div>
+<div class="card"><div class="ico">⚙️</div><h3>Back-end Development</h3><p>Server-side features and APIs using Node.js.</p></div>
+<div class="card"><div class="ico">🌐</div><h3>WordPress Websites</h3><p>Custom, mobile-friendly WordPress sites that are easy to manage.</p></div>
+<div class="card"><div class="ico">📱</div><h3>Responsive Design</h3><p>Layouts that look great on phones, tablets and desktops.</p></div>
+</div>
+<div class="cta"><h2>Need a website?</h2><a class="btn p" href="#contact">Request a quote</a></div>
+</section>
+
+<section class="page" id="p-contact" data-t="Contact">
+<div class="eyebrow">// contact</div><h2>Let's build something great.</h2>
+<p class="sub">Send me a message and I'll get back to you by email.</p>
+<div class="bento" style="align-items:start">
+<form id="cf"><input id="nm" placeholder="Your name" required><input id="em" type="email" placeholder="Your email" required><textarea id="ms" rows="5" placeholder="Tell me about your project" required></textarea><button class="btn p" type="submit">Send message</button></form>
+<div class="card"><h3>Email</h3><p><a href="mailto:laibasheikh2602@gmail.com" style="color:var(--a);font-weight:600">laibasheikh2602@gmail.com</a></p><h3 style="margin-top:18px">Location</h3><p>Abbottabad, Pakistan · Open to remote work</p></div>
+</div>
+</section>
+
+</main>
+<footer>&copy; 2026 Laiba Sheikh · Abbottabad, Pakistan</footer>
+
+<script>
+// Add real projects: {tag:"React · Node.js", name:"Project name", desc:"What it does.", link:"https://..."}
+var projects=[];
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+document.getElementById('pg').innerHTML=projects.length?projects.map(function(p){return '<div class="card"><div class="tag">'+esc(p.tag)+'</div><h3 style="margin-top:6px">'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p>'+(p.link?'<p style="margin-top:12px"><a href="'+esc(p.link)+'" style="color:var(--a);font-weight:600" target="_blank" rel="noopener">View project →</a></p>':'')+'</div>'}).join(''):'<div class="card empty"><h3>Featured projects</h3><p>Project case studies are being added. Check back soon.</p></div>';
+var t=['HTML5','CSS3','JavaScript','React.js','Node.js','WordPress','Python','REST APIs','Responsive Design'];
+document.getElementById('mq').innerHTML=t.concat(t).map(function(x){return '<span class="chip">'+x+'</span>'}).join('');
+var r=document.documentElement,lk=document.getElementById('lk');
+function go(){var h=(location.hash||'#home').slice(1);if(!document.getElementById('p-'+h))h='home';
+document.querySelectorAll('.page').forEach(function(p){p.classList.toggle('show',p.id==='p-'+h)});
+document.querySelectorAll('.links a.l').forEach(function(a){a.classList.toggle('on',a.dataset.p===h)});
+document.title=(h==='home'?'':document.getElementById('p-'+h).dataset.t+' | ')+'Laiba Sheikh | Full Stack Developer';
+lk.classList.remove('open');scrollTo(0,0)}
+addEventListener('hashchange',go);go();
+document.getElementById('mn').onclick=function(){lk.classList.toggle('open')};
+document.getElementById('tg').onclick=function(){var d=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);r.setAttribute('data-theme',d?'light':'dark')};
+document.getElementById('cf').onsubmit=function(e){e.preventDefault();var n=nm.value,m=em.value,b=ms.value;location.href='mailto:laibasheikh2602@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(b+'\n\nFrom: '+n+' ('+m+')')};
+</script>
+</body>
+</html>
